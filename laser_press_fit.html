@@ -1,0 +1,433 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Using a CNC to make an object</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Homepage</strong></a>
+								</header>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>Project 4 - Using a CNC to mill out an object.</h1>
+									</header>
+
+										<!-- Content -->
+										<h2 id="objective">The objective</h2>
+										<p>The objective of this project was to design an object that we can use a CNC to mill out.</p>
+
+
+										<h2 id="prep">Preperation</h2>
+
+										<p>All members of the project have considerable experience with Fusion 360 and decided to use that to make the 3D model. 
+											The software used to make the toolpaths is called VCarve and no member of the project had any experience with it.</p>
+										<p>Wr started by watching a YouTube video that explained the process of using the VCarve software. A link to the video is  <a href="https://www.youtube.com/watch?v=wGDx5PD0nTc">here</a>.</p>
+										<h3>Software and tools:</h3>
+										<ul>
+											<li>Fusion 360: <a href="https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&support=null">link</a>.</li>
+											<li>VCarve: <a href="https://www.vectric.com/products/vcarve-pro">link</a>.</li>
+										</ul>
+										<h4>Fusion 360</h4>
+										<p>Fusion 360 is a cloud-based CAD/CAM tool for collaborative product development.</p>
+
+										<h4>VCarve</h4>
+										<p>VCarve provides a powerful but intuitive software solution for creating and cutting parts on a CNC Router. VCarve Pro gives you the power to produce complex 2D patterns with profile, pocket, drill and inlay toolpaths, plus gives you the ability to create designs with v-carving textures as well as import and machine unlimited Vectric 3D clipart or single model files. </p>
+
+
+
+										<h2 id="insp">Inspiration</h2>
+										<p>I drew inspiration from the ShutterBox from <a href="https://festi.info/boxes.py/ShutterBox?language=en"> here</a>. It was a clever design but not entirely pressfit. I decided to make my own modifications so that no glue was needed to assemble the model. </p>
+											<p>The inspiration</p>
+											<span class="image object">
+												<!-- image of the resulting tab style-->
+												<img src="images/insp.jpg" alt="" width ="90%" />
+											</span>
+
+
+										<p>  </p>
+										<p>  </p>
+										<p>  </p>
+										<p> </p>
+										<p> </p>
+										<p> </p>
+
+										<article>
+											<h2 id="design">The design of the model.</h2>
+											<h4>1. Defining parameters</h4>
+											<p> I started by making all the parameters I needed, I admit that many of the parameters were defined mid-development but I will show them all now.</p>
+
+											<p>The parameters are as defined:</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/1-parametrar.JPG" alt="" width ="90%" />
+											</span>
+											<p>Many of the parameters are derived from others but "lengd", "þykkt_plotu", "radius", "hæð" and the number of fingers are all custamizable. The formulas for the derived parameters were found through trial and error as well as trigonometric calculations.</p>
+
+											<h4>2. Drawing the bottom plate</h4>
+											<p>I started the actual design by drawing a sketch of the bottom and defining width and length by my parameters.</p>
+											<p>The sketch:</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/2-botnplata.JPG" alt="" width ="90%" />
+											</span>
+											<h4>3. Extruding the bottom plate</h4>
+											<p> The sketch made previously was then extruded and the length of the extrusion defined by the "þykkt_plotu" parameter.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/3-extrude.JPG" alt="" width ="90%" />
+											</span>
+											<h4>4. Making the fingers on the bottom plate</h4>
+											<p>I followed the instructions in the YouTube video linked above and used dimensional constraints to define the position and size of the finger. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/4-skilgreinafingurbotn.JPG" alt="" width ="90%" />
+											</span>
+											<p> I then extruded the finger in to the plate. Following the instructions in the video I used a box pattern to repeat the cuts along the side of the plate.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/5-fingurbotn.JPG" alt="" width ="90%" />
+											</span>
+											<h4>5. Making the side panel </h4>
+											<p>I made a sketch of the side panel in a similar fashion to the bottom plate and extruded it by using the "þykkt_plotu" parameter. It is important to click on the "new body" option in extrude to ensure that it does not interfere with the bottom panel.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/6-hliðarplata.JPG" alt="" width ="90%" />
+											</span>
+											<p>I then made the fingers on the back of the side panel, using the same method as before.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/7-hliðarplata_fingur.JPG" alt="" width ="90%" />
+											</span>
+											<h4>6. Rounding the corner </h4>
+											<p>To get a beautiful rounded corner I simply used the fillet command and made sure to choose the correct edge and a constant radius (defined by the variable "radius").</p>
+
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/8-fillet.JPG" alt="" width ="90%" />
+											</span>
+
+											<h4>7. Making the fingers on the front of the side panel </h4>
+											<p>To make the fingers on the front of the side panel the same method as before was used but a differen formula for quantity and distance.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/9-hliðarplatafremrifingur.JPG" alt="" width ="90%" />
+											</span>
+											<h4>8. Extruding the side panel </h4>
+											<p>To make the second side panel I extruded the face of the first side panel and offset it so that it would make a new side panel at the correct location.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/10-seinnihliðarplata.JPG" alt="" width ="90%" />
+											</span>
+											<h4>9. Using combine to make the fingers match with the bottom plate </h4>
+											<p>Using the combine feature and the "keep tools" option I made the fingers in the side panels automatically match with the fingers on the bottom plate.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/11-hliðarplatacombine.JPG" alt="" width ="90%" />
+											</span>
+											<h4>10. Fingers on the back of the bottom panel and the back panel</h4>
+											<p>In a similar fashion as before I made the fingers on the back of the bottom plate. I then created a sketch of the back panel and extruded it, remembering to select the "new body" option.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/12-botnplataaftarifingur.JPG" alt="" width ="90%" />
+											</span>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/13-aftariplata.JPG" alt="" width ="90%" />
+											</span>
+											<h4>11. Fingers on the front of the bottom plate and the front plate</h4>
+											<p>Fingers on the front of the bottom plate were then created using the same method as before.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/14-botnplatafremrifingur.JPG" alt="" width ="90%" />
+											</span>
+											<p>The front plate was then made by creating a sketch and defing the height of the front panel as "hæð-radius" to compensate for the fillet.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/15-fremriplata.JPG" alt="" width ="90%" />
+											</span>
+											<p>Using the combine feature the fingers on the front plate were made to automatically match with the fingers on the side panels and the front of the bottom plate. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/16-fremriplatacombine.JPG" alt="" width ="90%" />
+											</span>
+											<h4>12. The middle plate</h4>
+											<p>To create the middel plate I made a sketch and defined the length of the middle plate as "lengd-2*radius/sqrt(2)-þykkt_plotu" to make it match with the guides that I made later on. Figuring out this formula took longer than I care to admit but once implemented everything lines up beautifully.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/17-milliplata.JPG" alt="" width ="90%" />
+											</span>
+											<p>I then extruded the middle plate with a offset of "2*þykkt_plotu+1mm" from the bottom to ensure that the flex plate would easily slide under. I then created fingers on the middle plate in a similar fashion as before. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/18-milliplatafingurogcombine.JPG" alt="" width ="90%" />
+											</span>
+											<h4>13. The guides</h4>
+											<p>In order to make the guides follow a arc a rather complicated sketch had to be made. I will show a picture of the sketch below but if you want to see the equations for yourself you can simply dowload the model and double click on the dimensions of the lines and circles. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/19-floknisketch.JPG" alt="" width ="90%" />
+											</span>
+											<p>The first guide was then extruded and the two rails that support the flex plate. A small hole was made in each support that a pin can be inserted into in order to keep it steady.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/20-fyrstaguide.JPG" alt="" width ="90%" />
+											</span>
+											<p>To make the fingers in the guides a sketch was made on the first one and a squre of dimension "þykkt_plotu"x"2*(sqrt(2)*radius-1mm-3*þykkt_plotu)*sin(90/10)*1deg)/3". This equation was derived from the segment length of 18 degrees in the circle sketched in the picture above.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/21-fingurguide.JPG" alt="" width ="90%" />
+											</span>
+											<p>The square pattern was then used with a spacing of "2*(sqrt(2)*radius-1mm-3*þykkt_plotu)*sin(90/10)*1deg)/3", the same as the length of the finger. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/22-seinnifingurguide.JPG" alt="" width ="90%" />
+											</span>
+											<p>In order to repeat the pattern along the circle a "pattern along a path" feature in Fusion 360 was used. The distance was defined as "(sqrt(2)*radius-1mm -3*þykkt_plotu)*PI/10". This is the arc length of that segment. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/23-restguide.JPG" alt="" width ="90%" />
+											</span>
+											<h4>14. The rails</h4>
+											<p>To make the rails a sketch was made and 4 fillets made along the sketch, each fillet with a smaller radius then the fillet above. The sketch can be seen in the picture below and the equations can be found in the model.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/24-handrid.JPG" alt="" width ="90%" />
+											</span>
+											<p>A small square hole was made in each rail in order for a pin to be inserted later on. This pin would keep the rails steady and no need for glue to be used!</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/25-holahandrid.JPG" alt="" width ="90%" />
+											</span>
+											<p>The hole was then extruded and the pattern feature used to repeat the holes along both rails.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/26-mynsturhandrid.JPG" alt="" width ="90%" />
+											</span>
+											
+											<p>The final result being:</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/27-mynsturseinnahandrid.JPG" alt="" width ="90%" />
+											</span>
+											<p>A finger was made on the back of the rails so that they can be inserted into the back plate for additional support.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/28-fingurhandrid.JPG" alt="" width ="90%" />
+											</span>
+											<p>The pattern feature was then used to repeat the extrusions along the height of each rail.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/29-handridallirfingur.JPG" alt="" width ="90%" />
+											</span>
+											<p>Both rails were then extruded onto the second side panel as I did before using the offset option.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/30-fingurollhandrid.JPG" alt="" width ="90%" />
+											</span>
+											<p>The combine command was then used to cut out the holes needed for the rails in the back panel.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/34-combinehandrid.JPG" alt="" width ="90%" />
+											</span>
+
+											<h4>15. The flex plate</h4>
+											<p>To make the flex plate I started with a simple sketch where I defined the length and height of the plate based on the parameters.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/31-flexplata.JPG" alt="" width ="90%" />
+											</span>
+											<p>To make a stopper that ensures the flex plate does not go to far a sketch was made on the flex plate</p>
+
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/35-stopper.JPG" alt="" width ="90%" />
+											</span>
+											<p>A finger was then made on the stopper.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/36-bfingurbreidd.JPG" alt="" width ="90%" />
+											</span>
+											<p>The pattern feature was then used to extend the fingers along the stopper and extrude them.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/37-combinepatternstoppari.JPG" alt="" width ="90%" />
+											</span>
+											<p>To make the pattern in the flex plate two rectangles were drawn as the picture below shows:</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/38-flexcut.JPG" alt="" width ="90%" />
+											</span>
+											<p>The pattern feature was then used to repead the cuts along the flex plate.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/39-patternflex.JPG" alt="" width ="90%" />
+											</span>
+											<p>The final result of the flex plate was: </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/40-totalpattern.JPG" alt="" width ="90%" />
+											</span>
+											<h4>16. The plugs</h4>
+											<p>The plugs were drawn as a rectangle with dimensions "þykkt_plotu"x"2*þykkt_plotu".</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/32-plugs.JPG" alt="" width ="90%" />
+											</span>
+											<p>The plug was then extruded and the pattern feature used to make the rest.</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/33-restplugs.JPG" alt="" width ="90%" />
+											</span>
+
+
+											<h4>17. The result</h4>
+											<p>Finally the entire model has been constructed and can be seen below:</p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/41-tobody.JPG" alt="" width ="90%" />
+											</span>
+											<p>The bodys were then converted to parts to prepare for the kerf compensation.</p>
+
+
+											<p>The following video was used to make the kerf compensation and prepare for DXF export <a href="https://www.youtube.com/watch?v=dKBxSx3Tv1k&ab_channel=HobbyistMaker">link</a>. </p>
+											<span class="image object">
+												<!-- image of the resulting parameters-->
+												<img src="images/myndir-verk2/42-dxfexport.JPG" alt="" width ="90%" />
+											</span>
+										
+											<h4>18. Preparing the file for laser cutting</h4>
+											<p>After the DXF file has been exported from Fusion 360, the files has to be imported into Inkscape.
+												 There the line thickness can set correctly, the model can be arranged to limit blank spaces and 
+												the file can be exported as a pdf document for the laser cutter.</p>
+
+											The final result of the pdf file is: 
+											<div id="kerfestimation" style="width: 50%;"></div>
+											<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+											<script type="text/javascript">
+												document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+													var adobeDCView = new AdobeDC.View({clientId: "45eee2c503e24f62bd42d8bb4a219874", divId: "laser_cut_project"});
+													adobeDCView.previewFile({
+														content:{location: {url: "assets/boxjoel.pdf"}},
+														metaData:{fileName: "laser_box.pdf"}
+													}, {embedMode: "IN_LINE"});
+												});
+											</script>
+											<p> </p>
+											<p> </p>
+											<h4>19. Adjusting the laser parameters</h4>
+											<p>A guide that was located at the site of the laser cutter was used to correctly adjust the parameters for the type of material used (wood).</p>
+											<p> </p>
+											<h4>20. Estimating kerf</h4>
+											<p>It is important to estimate the kerf before cutting with the laser, our method can be found from <a href="kerf.html"> here</a>.</p>
+											<p> </p>
+											<h4>21. Assembly of the box</h4>
+											<p>The box was then assembled. A few corners were a bit tight and I therefore used a file to trim them a little bit down. 
+												The box turned out great, it was important to wax the sliders and rails so that the flex plate could slide easily. The laser cut press fit model is shown below.</p>
+											<p> </p>
+											<div class="features">
+												<article>
+													<span class="image object"></span>
+														<!-- Custom image of the university-->
+														<img src="images/myndir-verk2/m1.jpg" alt="" width="70%" />
+												</article>
+												<article>
+													<span class="image object"></span>
+														<!-- Custom image of the university-->
+														<img src="images/myndir-verk2/m2.jpg" alt="" width="70%" />
+												</article>
+												<article>
+													<span class="image object"></span>
+														<!-- Custom image of the university-->
+														<img src="images/myndir-verk2/m3.jpg" alt="" width="70%" />
+												</article>
+												<article>
+													<span class="image object"></span>
+														<!-- Custom image of the university-->
+														<img src="images/myndir-verk2/m4.jpg" alt="" width="70%" />
+												</article>
+											</div>
+											<iframe width="1120" height="630" src="images/myndir-verk2/v1.mp4" frameborder="0" allowfullscreen>
+											</iframe>
+											<p>The model in its entirety can be found in <a href="https://github.com/JoelInga/JoelInga.github.io/blob/main/assets/skuffa%20v30.f3d">Github link to model</a>.</p>
+										</article>
+
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">Homepage</a></li>
+										<li><a href="resume.html">Resume</a></li>
+										<li>
+											<span class="opener">Projects</span>
+											<ul>
+												<!-- special html file for each project-->
+												<li><a href="making_the_website.html">The making of this website</a></li>
+												<li><a href="laser_press_fit.html">Laser cutting a press fit model</a></li>
+												<li><a href="kerf.html">Kerf estimation</a></li>
+												<li><a href="using_3d.html">3D printin and 3D scanning</a></li>
+												<li><a href="3dtest.html">3D print parameters estimation</a></li>
+												<!-- this is the formating
+												<li><a href="#">Ipsum Adipiscing</a></li>
+												<li><a href="#">Tempus Magna</a></li>
+												<li><a href="#">Feugiat Veroeros</a></li>
+												-->
+											</ul>
+										</li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<p>If any questions arise feel free to contact me.</p>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">joel.ingason@gmail.com</a></li>
+										<li class="icon solid fa-envelope"><a href="#">joi12@hi.is</a></li>
+									</ul>
+								</section>
+
+							<!-- Footer
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+							-->
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
