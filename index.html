@@ -190,11 +190,23 @@
 								</section>
 								<section>
 									<div class="content">
-										<video width="1280" height="720" controls>
+										<video width="90%"  controls>
 											<source src="https://www.dropbox.com/s/idcc8xdy10z2g2j/Project_6.mp4?raw=1" type="video/mp4" />
 										</video>
 									</div>
 								</section>
+								<div id="einblodungur" style="width: 800px;"></div>
+								<script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+								<script type="text/javascript">
+									document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+										var adobeDCView = new AdobeDC.View({clientId: "993840ddca0b4ef7820561e38de61051", divId: "einblodungur"});
+										adobeDCView.previewFile({
+											content:{location:{url: "images/einblodungur.pdf"}},
+											metaData:{fileName: "einblodungur.pdf"}
+										}, {embedMode: "IN_LINE"});
+									});
+								</script>
+
 								<footer id="footer">
 									<p class="copyright">&copy; Ísak Ernir Sveinbjörnsson, Jóel Ingason &#38; Stefán Jónsson. No rights reserved. 
 										All parts of this site may be reproduced in any manner without written, or oral, permission of the copyright owners.</p>
